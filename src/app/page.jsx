@@ -3,16 +3,13 @@ import Link from "next/link";
 export const dynamic = "force-static";
 
 export const metadata = {
-  title: "Home",
-  description: "Description",
+  title: "Disney",
+  description: "Data about Disney characters",
 };
 
 export default async function Home() {
-  const url = "https://dog.ceo/api/breeds/image/random";
-  const res = await fetch(url);
-  const data = await res.json();
+  const imageUrl = "https://static.wikia.nocookie.net/disney/images/3/3c/Buddy_%28Air_Bud%29.png";
 
-  console.log(data);
   return (
     <main>
       <h1>Hello world!</h1>
@@ -26,7 +23,7 @@ export default async function Home() {
         Link to Pete
       </Link>
 
-      <img src={data.message} alt="random dog" />
+      <img src={imageUrl} alt="air bud" />
     </main>
   );
 }
