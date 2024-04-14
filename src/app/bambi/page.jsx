@@ -196,47 +196,51 @@ export default async function BambiPage() {
 
   return (
     <main className="md:flex max-w-7xl mx-auto">
-      <div>
+      <div className="m-4">
         <h1 className="text-3xl">My name is {bambiName}</h1>
-        <Image src={bambiImageUrl} alt={bambiName} width={3024} height={4032} className="w-full" />
+        <Image src={bambiImageUrl} alt={bambiName} width={3024} height={4032} className="w-64 mt-8 mb-6" />
         <p>
           I was in some films called: {bambiFilms.slice(0, 3).join(", ")}
-          {bambiFilms.length > 3 ? ", among others..." : ""} and my id is {bambiId}
+          {bambiFilms.length > 3 ? ", among others..." : ""}
         </p>
         <p>
           I have been in video games, my favorit ones were: {bambiVideoGames.slice(0, 3).join(", ")}{" "}
           {bambiVideoGames.length > 3 ? " and many more..." : ""}
         </p>
-        <p>
-          Read more about me on my Wiki page:{" "}
-          <Link target="_blank" href={bambiSourceUrl}>
-            Wiki
-          </Link>
-        </p>
-        <hr />
-        <h2 className="text-3xl">These are my parents: </h2>
-        <p> This is my mother: {motherName}</p>
-        <Image src={motherImageUrl} alt={motherName} width={3024} height={4032} className="w-full" />
-        <p>My father is known as: {fatherName}</p>
-        <Image src={fatherImageUrl} alt={fatherName} width={3024} height={4032} className="w-full" />
 
+        <h2 className="text-3xl mt-8">These are my parents: </h2>
+        <div className="flex flex-row space-x-4 mb-6 mt-2">
+          <div>
+            <p> This is my mother: {motherName}</p>
+            <Image src={motherImageUrl} alt={motherName} width={3024} height={4032} className="w-64 mt-8 mb-6" />
+          </div>
+          <div>
+            <p>My father is known as: {fatherName}</p>
+            <Image src={fatherImageUrl} alt={fatherName} width={3024} height={4032} className="w-64 mt-8 mb-6" />
+          </div>
+        </div>
+        <h3 className="text-xl mt-8">These are my friends:</h3>
+        <div className="flex flex-row space-x-4 mb-6 mt-2">
+          <div>
+            <p>{thumberName}</p>
+            <Image src={thumberImageUrl} alt={thumberName} width={3024} height={4032} className="w-40" />
+          </div>{" "}
+          <div>
+            <p>{flowerName}</p>
+            <Image src={flowerImageUrl} alt={flowerName} width={3024} height={4032} className="w-40" />
+          </div>
+          <div>
+            <p>{owlName}</p>
+            <Image src={owlImageUrl} alt={owlName} width={3024} height={4032} className="w-40" />
+          </div>
+        </div>
+        <p>My id is {bambiId}</p>
         <p>
           Read more about me on my Wiki page:{" "}
           <Link target="_blank" href={motherSourceUrl}>
             Wiki
           </Link>
         </p>
-        <h3>These are my friends:</h3>
-        <div>
-          <ul>
-            <li>{thumberName}</li>
-            <Image src={thumberImageUrl} alt={thumberName} width={3024} height={4032} className="w-40" />
-            <li>{flowerName}</li>
-            <Image src={flowerImageUrl} alt={flowerName} width={3024} height={4032} className="w-40" />
-            <li>{owlName}</li>
-            <Image src={owlImageUrl} alt={owlName} width={3024} height={4032} className="w-40" />
-          </ul>
-        </div>
       </div>
     </main>
   );

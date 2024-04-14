@@ -110,29 +110,43 @@ export default async function BalooPage() {
   const { name: louieName, imageUrl: louieImageUrl } = louieData;
 
   return (
-    <main className="md:flex max-w-7xl mx-auto">
+    <main className="md:flex max-w-7xl mt-4 ml-4 mr-4 mx-auto">
       <div>
         <h1 className="text-3xl">My name is {name}</h1>
-        <Image src={imageUrl} alt={name} width={3024} height={4032} className="w-full" />
-        <p>
-          I was in some films called: {films.slice(0, 3).join(", ")}
-          {films.length > 3 ? "among others..." : ""} and my id is {_id}
+        <h2>My first movie was {films[0]}</h2>
+
+        <Image src={imageUrl} alt={name} width={3024} height={4032} className="w-64 mt-8 mb-6" />
+        <p className="mt-8 mb-6">
+          I was in some other films called:{" "}
+          <span className="text-blue-600/80">
+            {films.slice(1, 4).join(", ")}
+            {films.length > 3 ? ", among others..." : ""}
+          </span>{" "}
         </p>
+
         <p>
-          I have been in video games, my favorite ones were: {videoGames.slice(0, 3).join(", ")}{" "}
-          {videoGames.length > 3 ? "and many more..." : ""}
+          I have been in video games, my favorite ones were:{" "}
+          <span className="text-red-600/80">
+            {videoGames.slice(0, 3).join(", ")} {videoGames.length > 3 ? "and many more..." : ""}
+          </span>
         </p>
-        <h3>These are my friends:</h3>
-        <div>
-          <ul>
-            <li>{bagheeraName}</li>
+        <h3 className="text-xl mt-6">These are my friends:</h3>
+        <div className="flex flex-row space-x-4 mb-6">
+          <div>
+            <p>{bagheeraName}</p>
             <Image src={bagheeraImageUrl} alt={bagheeraName} width={3024} height={4032} className="w-40" />
-            <li>{mowgliName}</li>
+          </div>
+          <div>
+            <p>{mowgliName}</p>
             <Image src={mowgliImageUrl} alt={mowgliName} width={3024} height={4032} className="w-40" />
-            <li>{louieName}</li>
+          </div>
+          <div>
+            <p>{louieName}</p>
             <Image src={louieImageUrl} alt={louieName} width={3024} height={4032} className="w-40" />
-          </ul>
+          </div>
         </div>
+        <p>My id in this API is {_id}</p>
+
         <p>
           Read more about me on my Wiki page:{" "}
           <Link target="_blank" href={sourceUrl}>
