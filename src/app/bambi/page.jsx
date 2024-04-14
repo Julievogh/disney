@@ -198,13 +198,14 @@ export default async function BambiPage() {
     <main className="md:flex max-w-7xl mx-auto">
       <div className="m-4">
         <h1 className="text-3xl">My name is {bambiName}</h1>
+        <p>My first movie was {bambiFilms[0]}</p>
         <Image src={bambiImageUrl} alt={bambiName} width={3024} height={4032} className="w-64 mt-8 mb-6" />
         <p>
-          I was in some films called: {bambiFilms.slice(0, 3).join(", ")}
+          I was in some other films called: {bambiFilms.slice(1, 4).join(", ")}
           {bambiFilms.length > 3 ? ", among others..." : ""}
         </p>
-        <p>
-          I have been in video games, my favorit ones were: {bambiVideoGames.slice(0, 3).join(", ")}{" "}
+        <p className="mt-8">
+          I have also been featured in video games, my favorit ones were: {bambiVideoGames.slice(0, 3).join(", ")}{" "}
           {bambiVideoGames.length > 3 ? " and many more..." : ""}
         </p>
 

@@ -13,9 +13,7 @@ export async function generateMetadata() {
 
   return {
     title: name,
-    description: `${name} is a Disney Character from the film ${films[0]}`, // Accessing the first film
-    id: _id,
-    imageUrl: imageUrl,
+    description: `${name} is a Disney Character from the film ${films[0]}`,
     videoGames: videoGames,
     sourceUrl: sourceUrl,
   };
