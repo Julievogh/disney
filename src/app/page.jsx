@@ -8,22 +8,14 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const imageUrl = "https://static.wikia.nocookie.net/disney/images/3/3c/Buddy_%28Air_Bud%29.png";
+  const imageUrl = "https://static.wikia.nocookie.net/disney/images/9/99/Mickey_Mouse_Disney_3.jpeg";
 
   return (
-    <main>
-      <h1>Hello world!</h1>
-      <Link href={"/tommi"} prefetch={false}>
-        Link to Tommi
-      </Link>
-      <Link href={"/henry"} prefetch={false}>
-        Link to Henry
-      </Link>
-      <Link href={"/pete"} prefetch={false}>
-        Link to Pete
-      </Link>
-
-      <img src={imageUrl} alt="air bud" />
+    <main className="flex justify-center items-center h-screen">
+      <div className="text-center">
+        <h1 className="h-auto max-w-lg rounded-lg p-6 text-white bg-sky-700 text-3xl ">Welcome to Disney!</h1>
+        <img src={imageUrl} className="w-64 mt-1" alt="mickey" />
+      </div>
     </main>
   );
 }
